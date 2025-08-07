@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('file', file);
             formData.append('size', targetSize);
             
-            const response = await fetch('http://localhost:8000/process-image/', {
+            const response = await fetch('https://image-resizer-backend-ehcz.onrender.com/process-image/', {
                 method: 'POST',
                 body: formData
             });
