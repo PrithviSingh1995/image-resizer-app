@@ -13,31 +13,70 @@
     <!-- Header/Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container">
-        <a class="navbar-brand" href="#" onclick="showPage('home')">Image Resizer</a>
+        <a class="navbar-brand" href="/" onclick="return showPage('home', event)">Image Tools</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#" onclick="showPage('home')">Home</a>
+              <a class="nav-link active" href="/" onclick="return showPage('home', event)">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="showPage('converter')">Image Converter</a>
+              <a class="nav-link" href="/resizer" onclick="return showPage('resizer', event)">Image Resizer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="showPage('about')">About Us</a>
+              <a class="nav-link" href="/converter" onclick="return showPage('converter', event)">Image Converter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onclick="showPage('contact')">Contact Us</a>
+              <a class="nav-link" href="/about" onclick="return showPage('about', event)">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact" onclick="return showPage('contact', event)">Contact Us</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- New Home Page -->
     <div class="container mt-5" id="page-home">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+              <h2 class="mb-0">Welcome to Image Tools</h2>
+            </div>
+            <div class="card-body text-center">
+              <p class="lead">Easily resize, compress, and convert your images online. Fast, private, and free!</p>
+              <div class="row g-4 mt-4">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded h-100">
+                    <h4>Image Resizer</h4>
+                    <p>Compress and resize images to your desired file size in KB. Perfect for web uploads, email, and more.</p>
+                    <a href="/resizer" onclick="return showPage('resizer', event)" class="btn btn-primary">Go to Resizer</a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded h-100">
+                    <h4>Image Converter</h4>
+                    <p>Convert images between formats: JPG, PNG, GIF, WEBP, BMP, TIFF, and more. No quality loss.</p>
+                    <a href="/converter" onclick="return showPage('converter', event)" class="btn btn-primary">Go to Converter</a>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a href="/about" onclick="return showPage('about', event)" class="btn btn-link">About Us</a>
+                <a href="/contact" onclick="return showPage('contact', event)" class="btn btn-link">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Resizer Page (moved from home) -->
+    <div class="container mt-5 d-none" id="page-resizer">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <div class="card shadow">
@@ -160,7 +199,7 @@
               <h2 class="mb-0">About Us</h2>
             </div>
             <div class="card-body">
-              <p>Welcome to <strong>Image Resizer</strong>! This free tool lets you easily compress and resize images to your desired file size. Built with FastAPI and Bootstrap, it’s designed for speed, privacy, and simplicity. No images are stored on our servers.</p>
+              <p>Welcome to <strong>Image Tools</strong>! This free tool lets you easily compress, resize, and convert images to your desired file size or format. Built with FastAPI and Bootstrap, it’s designed for speed, privacy, and simplicity. No images are stored on our servers.</p>
               <p>Created by Prithvi Singh and contributors.</p>
             </div>
           </div>
@@ -192,7 +231,7 @@
     <!-- Footer -->
     <footer class="bg-primary text-white text-center py-3 mt-5">
       <div class="container">
-        <small>&copy; 2025 Image Resizer. All rights reserved.</small>
+        <small>&copy; 2025 Image Tools. All rights reserved.</small>
       </div>
     </footer>
 
@@ -201,27 +240,67 @@
     <!-- Custom JS -->
     <script src="script.js"></script>
     <script>
-      function showPage(page) {
+      // SPA navigation with history API
+      function showPage(page, event) {
+        if (event) event.preventDefault();
+        const pageMap = {
+          'home': '/',
+          'resizer': '/resizer',
+          'converter': '/converter',
+          'about': '/about',
+          'contact': '/contact'
+        };
+        // Hide all
         document.getElementById('page-home').classList.add('d-none');
+        document.getElementById('page-resizer').classList.add('d-none');
         document.getElementById('page-converter').classList.add('d-none');
         document.getElementById('page-about').classList.add('d-none');
         document.getElementById('page-contact').classList.add('d-none');
         document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        // Show selected
         if (page === 'home') {
           document.getElementById('page-home').classList.remove('d-none');
           document.querySelectorAll('.nav-link')[0].classList.add('active');
+        } else if (page === 'resizer') {
+          document.getElementById('page-resizer').classList.remove('d-none');
+          document.querySelectorAll('.nav-link')[1].classList.add('active');
         } else if (page === 'converter') {
           document.getElementById('page-converter').classList.remove('d-none');
-          document.querySelectorAll('.nav-link')[1].classList.add('active');
+          document.querySelectorAll('.nav-link')[2].classList.add('active');
         } else if (page === 'about') {
           document.getElementById('page-about').classList.remove('d-none');
-          document.querySelectorAll('.nav-link')[2].classList.add('active');
+          document.querySelectorAll('.nav-link')[3].classList.add('active');
         } else if (page === 'contact') {
           document.getElementById('page-contact').classList.remove('d-none');
-          document.querySelectorAll('.nav-link')[3].classList.add('active');
+          document.querySelectorAll('.nav-link')[4].classList.add('active');
+        }
+        // Update URL
+        if (window.location.pathname !== pageMap[page]) {
+          window.history.pushState({page: page}, '', pageMap[page]);
         }
         window.scrollTo(0, 0);
+        return false;
       }
+      // On browser navigation (back/forward)
+      window.onpopstate = function(event) {
+        const path = window.location.pathname;
+        if (path === '/' || path === '') showPage('home');
+        else if (path === '/resizer') showPage('resizer');
+        else if (path === '/converter') showPage('converter');
+        else if (path === '/about') showPage('about');
+        else if (path === '/contact') showPage('contact');
+        else showPage('home');
+      };
+      // On initial load
+      document.addEventListener('DOMContentLoaded', function() {
+        const path = window.location.pathname;
+        if (path === '/' || path === '') showPage('home');
+        else if (path === '/resizer') showPage('resizer');
+        else if (path === '/converter') showPage('converter');
+        else if (path === '/about') showPage('about');
+        else if (path === '/contact') showPage('contact');
+        else showPage('home');
+      });
     </script>
 </body>
 </html> 
