@@ -77,5 +77,47 @@ async def process_image(file: UploadFile = File(...), size: int = Form(100)):
         from fastapi import HTTPException
         raise HTTPException(status_code=500, detail=f"Error processing image: {str(e)}")
 
+# New endpoint for image conversion
+@app.post("/convert-image/")
+async def convert_image(file: UploadFile = File(...), format: str = Form(...)):
+    try:
+        img = Image.open(file.file)
+        # Map user-friendly format to PIL format
+        format_map = {
+            'jpg': 'JPEG', 'jpeg': 'JPEG',
+            'png': 'PNG',
+            'gif': 'GIF',
+            'webp': 'WEBP',
+            'bmp': 'BMP',
+            'tiff': 'TIFF', 'tif': 'TIFF',
+        }
+        fmt = format_map.get(format.lower())
+        if not fmt:
+            from fastapi import HTTPException
+            raise HTTPException(status_code=400, detail=f"Unsupported format: {format}")
+        # Convert mode if needed
+        if fmt in ['JPEG', 'BMP', 'WEBP'] and img.mode in ('RGBA', 'LA', 'P'):
+            img = img.convert('RGB')
+        output_io = BytesIO()
+        img.save(output_io, format=fmt)
+        output_io.seek(0)
+        # Set correct media type
+        media_types = {
+            'JPEG': 'image/jpeg',
+            'PNG': 'image/png',
+            'GIF': 'image/gif',
+            'WEBP': 'image/webp',
+            'BMP': 'image/bmp',
+            'TIFF': 'image/tiff',
+        }
+        media_type = media_types.get(fmt, 'application/octet-stream')
+        ext = fmt.lower() if fmt != 'JPEG' else 'jpg'
+        return StreamingResponse(output_io, media_type=media_type, headers={
+            "Content-Disposition": f"attachment; filename=converted.{ext}"
+        })
+    except Exception as e:
+        from fastapi import HTTPException
+        raise HTTPException(status_code=500, detail=f"Error converting image: {str(e)}")
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=10000)

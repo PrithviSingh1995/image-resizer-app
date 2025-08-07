@@ -23,6 +23,9 @@
               <a class="nav-link active" href="#" onclick="showPage('home')">Home</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showPage('converter')">Image Converter</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#" onclick="showPage('about')">About Us</a>
             </li>
             <li class="nav-item">
@@ -100,6 +103,54 @@
         </div>
     </div>
 
+    <!-- Image Converter Page -->
+    <div class="container mt-5 d-none" id="page-converter">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+              <h2 class="mb-0">Image Converter</h2>
+            </div>
+            <div class="card-body">
+              <form id="convertForm" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="convertFile" class="form-label">Select Image</label>
+                  <input type="file" class="form-control" id="convertFile" name="file" accept="image/*" required>
+                </div>
+                <div class="mb-3">
+                  <label for="convertFormat" class="form-label">Convert To</label>
+                  <select class="form-select" id="convertFormat" name="format" required>
+                    <option value="jpg">JPG</option>
+                    <option value="png">PNG</option>
+                    <option value="gif">GIF</option>
+                    <option value="webp">WEBP</option>
+                    <option value="bmp">BMP</option>
+                    <option value="tiff">TIFF</option>
+                  </select>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg" id="convertBtn">
+                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    Convert Image
+                  </button>
+                </div>
+              </form>
+              <div id="convertResult" class="mt-4 d-none">
+                <h5>Converted Image</h5>
+                <img id="convertedPreview" class="img-fluid rounded mb-2" alt="Converted Preview">
+                <div>
+                  <a id="convertedDownload" class="btn btn-success" download>Download Converted Image</a>
+                </div>
+              </div>
+              <div id="convertError" class="alert alert-danger mt-3 d-none" role="alert">
+                <span id="convertErrorMessage"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- About Us Page -->
     <div class="container mt-5 d-none" id="page-about">
       <div class="row justify-content-center">
@@ -152,18 +203,22 @@
     <script>
       function showPage(page) {
         document.getElementById('page-home').classList.add('d-none');
+        document.getElementById('page-converter').classList.add('d-none');
         document.getElementById('page-about').classList.add('d-none');
         document.getElementById('page-contact').classList.add('d-none');
         document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
         if (page === 'home') {
           document.getElementById('page-home').classList.remove('d-none');
           document.querySelectorAll('.nav-link')[0].classList.add('active');
+        } else if (page === 'converter') {
+          document.getElementById('page-converter').classList.remove('d-none');
+          document.querySelectorAll('.nav-link')[1].classList.add('active');
         } else if (page === 'about') {
           document.getElementById('page-about').classList.remove('d-none');
-          document.querySelectorAll('.nav-link')[1].classList.add('active');
+          document.querySelectorAll('.nav-link')[2].classList.add('active');
         } else if (page === 'contact') {
           document.getElementById('page-contact').classList.remove('d-none');
-          document.querySelectorAll('.nav-link')[2].classList.add('active');
+          document.querySelectorAll('.nav-link')[3].classList.add('active');
         }
         window.scrollTo(0, 0);
       }
