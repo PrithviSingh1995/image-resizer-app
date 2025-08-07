@@ -10,7 +10,31 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#" onclick="showPage('home')">Image Resizer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" onclick="showPage('home')">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showPage('about')">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showPage('contact')">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5" id="page-home">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <div class="card shadow">
@@ -76,9 +100,73 @@
         </div>
     </div>
 
+    <!-- About Us Page -->
+    <div class="container mt-5 d-none" id="page-about">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+              <h2 class="mb-0">About Us</h2>
+            </div>
+            <div class="card-body">
+              <p>Welcome to <strong>Image Resizer</strong>! This free tool lets you easily compress and resize images to your desired file size. Built with FastAPI and Bootstrap, it’s designed for speed, privacy, and simplicity. No images are stored on our servers.</p>
+              <p>Created by Prithvi Singh and contributors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div class="container mt-5 d-none" id="page-contact">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+              <h2 class="mb-0">Contact Us</h2>
+            </div>
+            <div class="card-body">
+              <p>Have questions, feedback, or want to contribute?</p>
+              <ul>
+                <li>Email: <a href="mailto:prithvisingh1995@gmail.com">prithvisingh1995@gmail.com</a></li>
+                <li>GitHub: <a href="https://github.com/PrithviSingh1995/image-resizer-app" target="_blank">Project Repository</a></li>
+              </ul>
+              <p>We’d love to hear from you!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+      <div class="container">
+        <small>&copy; 2025 Image Resizer. All rights reserved.</small>
+      </div>
+    </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script>
+      function showPage(page) {
+        document.getElementById('page-home').classList.add('d-none');
+        document.getElementById('page-about').classList.add('d-none');
+        document.getElementById('page-contact').classList.add('d-none');
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        if (page === 'home') {
+          document.getElementById('page-home').classList.remove('d-none');
+          document.querySelectorAll('.nav-link')[0].classList.add('active');
+        } else if (page === 'about') {
+          document.getElementById('page-about').classList.remove('d-none');
+          document.querySelectorAll('.nav-link')[1].classList.add('active');
+        } else if (page === 'contact') {
+          document.getElementById('page-contact').classList.remove('d-none');
+          document.querySelectorAll('.nav-link')[2].classList.add('active');
+        }
+        window.scrollTo(0, 0);
+      }
+    </script>
 </body>
 </html> 
