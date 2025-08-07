@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Show loading state
-        setLoading(true);
+        // Show uploading state
+        setLoading('uploading');
         hideError();
         
         try {
@@ -57,6 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('file', file);
             formData.append('size', targetSize);
             
+            // Simulate a short delay for uploading (optional, for demo)
+            // await new Promise(res => setTimeout(res, 500));
+
+            // Show processing state just before fetch
+            setLoading('processing');
+
             const response = await fetch('https://image-resizer-backend-ehcz.onrender.com/process-image/', {
                 method: 'POST',
                 body: formData
@@ -114,8 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Helper functions
-    function setLoading(loading) {
-        if (loading) {
+    function setLoading(state) {
+        if (state === 'uploading') {
+            processBtn.disabled = true;
+            spinner.classList.remove('d-none');
+            processBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Uploading...';
+        } else if (state === 'processing') {
             processBtn.disabled = true;
             spinner.classList.remove('d-none');
             processBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
