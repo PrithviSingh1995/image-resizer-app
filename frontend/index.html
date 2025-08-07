@@ -39,35 +39,87 @@
       </div>
     </nav>
 
-    <!-- Home Page Content -->
-    <div class="container mt-5">
-      <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-8">
-          <div class="card shadow">
-            <div class="card-header bg-primary text-white text-center">
-              <h2 class="mb-0">Welcome to Image Tools</h2>
-            </div>
-            <div class="card-body text-center">
-              <p class="lead">Easily resize, compress, and convert your images online. Fast, private, and free!</p>
-              <div class="row g-4 mt-4">
-                <div class="col-md-6">
-                  <div class="p-3 border rounded h-100">
-                    <h4>Image Resizer</h4>
-                    <p>Compress and resize images to your desired file size in KB. Perfect for web uploads, email, and more.</p>
-                    <a href="resizer.html" class="btn btn-primary">Go to Resizer</a>
+    <!-- Hero Section with Image Converter Form -->
+    <div class="container-fluid mt-5">
+      <div class="row align-items-center min-vh-75">
+        <div class="col-lg-6">
+          <div class="px-4">
+            <h1 class="display-4 fw-bold text-primary mb-4">Transform Your Images</h1>
+            <p class="lead mb-4">Easily resize, compress, and convert your images online. Fast, private, and completely free!</p>
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                    <i class="bi bi-check text-white"></i>
                   </div>
+                  <span>Compress images to any size</span>
                 </div>
-                <div class="col-md-6">
-                  <div class="p-3 border rounded h-100">
-                    <h4>Image Converter</h4>
-                    <p>Convert images between formats: JPG, PNG, GIF, WEBP, BMP, TIFF, and more. No quality loss.</p>
-                    <a href="converter.html" class="btn btn-primary">Go to Converter</a>
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                    <i class="bi bi-check text-white"></i>
                   </div>
+                  <span>Convert between formats</span>
                 </div>
               </div>
-              <div class="mt-4">
-                <a href="about.html" class="btn btn-link">About Us</a>
-                <a href="contact.html" class="btn btn-link">Contact Us</a>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                    <i class="bi bi-check text-white"></i>
+                  </div>
+                  <span>100% private & secure</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                    <i class="bi bi-check text-white"></i>
+                  </div>
+                  <span>No registration required</span>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex gap-3">
+              <a href="resizer.html" class="btn btn-primary btn-lg">Try Image Resizer</a>
+              <a href="about.html" class="btn btn-outline-primary btn-lg">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card shadow-lg border-0">
+            <div class="card-header bg-primary text-white text-center">
+              <h3 class="mb-0">Quick Image Converter</h3>
+            </div>
+            <div class="card-body p-4">
+              <form id="homeConvertForm" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="homeConvertFile" class="form-label">Select Image</label>
+                  <input type="file" class="form-control" id="homeConvertFile" name="file" accept="image/*" required>
+                </div>
+                <div class="mb-3">
+                  <label for="homeConvertFormat" class="form-label">Convert To</label>
+                  <select class="form-select" id="homeConvertFormat" name="format" required>
+                    <option value="jpg">JPG</option>
+                    <option value="png">PNG</option>
+                    <option value="gif">GIF</option>
+                    <option value="webp">WEBP</option>
+                    <option value="bmp">BMP</option>
+                    <option value="tiff">TIFF</option>
+                  </select>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg" id="homeConvertBtn">
+                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    Convert Image
+                  </button>
+                </div>
+              </form>
+              <div id="homeConvertResult" class="mt-4 d-none">
+                <h6>Converted Image</h6>
+                <img id="homeConvertedPreview" class="img-fluid rounded mb-2" alt="Converted Preview" style="max-height: 200px;">
+                <div>
+                  <a id="homeConvertedDownload" class="btn btn-success btn-sm" download>Download Converted Image</a>
+                </div>
+              </div>
+              <div id="homeConvertError" class="alert alert-danger mt-3 d-none" role="alert">
+                <span id="homeConvertErrorMessage"></span>
               </div>
             </div>
           </div>
@@ -84,5 +136,100 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+      // Home page converter form functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const homeConvertForm = document.getElementById('homeConvertForm');
+        const homeConvertBtn = document.getElementById('homeConvertBtn');
+        const homeConvertResult = document.getElementById('homeConvertResult');
+        const homeConvertedPreview = document.getElementById('homeConvertedPreview');
+        const homeConvertedDownload = document.getElementById('homeConvertedDownload');
+        const homeConvertError = document.getElementById('homeConvertError');
+        const homeConvertErrorMessage = document.getElementById('homeConvertErrorMessage');
+
+        homeConvertForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const formData = new FormData();
+          const fileInput = document.getElementById('homeConvertFile');
+          const formatSelect = document.getElementById('homeConvertFormat');
+          
+          if (!fileInput.files[0]) {
+            showHomeError('Please select an image file.');
+            return;
+          }
+          
+          formData.append('file', fileInput.files[0]);
+          formData.append('format', formatSelect.value);
+          
+          // Show loading state
+          setHomeButtonLoading(homeConvertBtn, 'processing');
+          hideHomeError();
+          hideHomeResult();
+          
+          try {
+            const response = await fetch('http://localhost:8000/convert-image/', {
+              method: 'POST',
+              body: formData
+            });
+            
+            if (!response.ok) {
+              const errorData = await response.json();
+              throw new Error(errorData.detail || 'Failed to convert image');
+            }
+            
+            const blob = await response.blob();
+            const url = URL.createObjectURL(blob);
+            
+            // Display result
+            homeConvertedPreview.src = url;
+            homeConvertedDownload.href = url;
+            homeConvertedDownload.download = `converted_${fileInput.files[0].name.split('.')[0]}.${formatSelect.value}`;
+            
+            showHomeResult();
+            
+          } catch (error) {
+            console.error('Error:', error);
+            showHomeError(error.message || 'Failed to convert image. Please try again.');
+          } finally {
+            setHomeButtonLoading(homeConvertBtn, 'reset');
+          }
+        });
+        
+        function setHomeButtonLoading(button, state) {
+          const spinner = button.querySelector('.spinner-border');
+          if (state === 'processing') {
+            button.disabled = true;
+            spinner.classList.remove('d-none');
+            button.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Converting...';
+          } else { // 'reset'
+            button.disabled = false;
+            spinner.classList.add('d-none');
+            button.innerHTML = 'Convert Image';
+          }
+        }
+        
+        function showHomeResult() {
+          homeConvertResult.classList.remove('d-none');
+          homeConvertError.classList.add('d-none');
+        }
+        
+        function hideHomeResult() {
+          homeConvertResult.classList.add('d-none');
+        }
+        
+        function showHomeError(message) {
+          homeConvertErrorMessage.textContent = message;
+          homeConvertError.classList.remove('d-none');
+          homeConvertResult.classList.add('d-none');
+        }
+        
+        function hideHomeError() {
+          homeConvertError.classList.add('d-none');
+        }
+      });
+    </script>
 </body>
 </html> 
