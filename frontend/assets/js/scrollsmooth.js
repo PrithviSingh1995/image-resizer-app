@@ -2,12 +2,12 @@
 
 
 // ScrollSmoother.create({
-//   content: ".zubuz-smooth-scroll",
+//   content: ".a-smooth-scroll",
 //   smooth: 1
 // });
 
 // const body = document.body,
-//   jsScroll = document.getElementsByClassName("zubuz-smooth-scroll")[0],
+//   jsScroll = document.getElementsByClassName("a-smooth-scroll")[0],
 //   height = jsScroll.getBoundingClientRect().height - 1,
 //   speed = 0.05;
 

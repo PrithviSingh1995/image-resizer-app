@@ -363,7 +363,7 @@
   position: relative;
 }
 .white-menu .site-menu-main .nav-link-item, 
-.white-menu .zubuz-login-btn {
+.white-menu .a-login-btn {
   color: var(--white-color);
 }
 

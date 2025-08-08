@@ -1,250 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Tools - Home</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Header/Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Image Tools</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="resizer.html">Image Resizer</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="converter.html">Image Converter</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <!-- Hero Section with Image Converter Form -->
-    <div class="container-fluid mt-5">
-      <div class="row align-items-center min-vh-75">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Img Convert Online - One Stop Solution for all your Image Needs</title>
+
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <!--- End favicon-->
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
+  <!-- End google font  -->
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+
+
+  <!-- Code Editor  -->
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/app.min.css">
+</head>
+
+<body class="light">
+
+  <div class="a-preloader-wrap">
+    <div class="a-preloader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+
+
+  <header class="site-header a-header-section" id="sticky-menu">
+    <div class="container">
+      <nav class="navbar site-navbar">
+        <!-- Brand Logo-->
+        <div class="brand-logo"><a href="index.html"><img src="assets/images/logo/img-convert-online-logo.png" alt="" class="light-version-logo"></a></div>
+        <div class="menu-block-wrapper">
+          <div class="menu-overlay"></div>
+          <nav class="menu-block" id="append-menu-header">
+            <div class="mobile-menu-head">
+              <div class="go-back">
+                <i class="fa fa-angle-left"></i>
+              </div>
+              <div class="current-menu-title"></div>
+              <div class="mobile-menu-close">&times;</div>
+            </div>
+            <ul class="site-menu-main">
+
+              
+			  <li class="nav-item"><a href="#" class="nav-link-item">Image Resizer</a></li>
+			  <li class="nav-item"><a href="#" class="nav-link-item">About Us</a></li>              
+              <li class="nav-item"><a href="#" class="nav-link-item">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- mobile menu trigger -->
+        <div class="mobile-menu-trigger light">
+          <span></span>
+        </div>
+        <!--/.Mobile Menu Hamburger Ends-->
+      </nav>
+    </div>
+  </header>
+  <!--End landex-header-section -->
+
+  <div class="a-hero-section2">
+    <div class="container">
+      <div class="row">
         <div class="col-lg-6">
-          <div class="px-4">
-            <h1 class="display-4 fw-bold text-primary mb-4">Transform Your Images</h1>
-            <p class="lead mb-4">Easily resize, compress, and convert your images online. Fast, private, and completely free!</p>
-            <div class="row g-3 mb-4">
-              <div class="col-md-6">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                    <i class="bi bi-check text-white"></i>
-                  </div>
-                  <span>Compress images to any size</span>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                    <i class="bi bi-check text-white"></i>
-                  </div>
-                  <span>Convert between formats</span>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                    <i class="bi bi-check text-white"></i>
-                  </div>
-                  <span>100% private & secure</span>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                  <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                    <i class="bi bi-check text-white"></i>
-                  </div>
-                  <span>No registration required</span>
-                </div>
-              </div>
-            </div>
-            <div class="d-flex gap-3">
-              <a href="resizer.html" class="btn btn-primary btn-lg">Try Image Resizer</a>
-              <a href="about.html" class="btn btn-outline-primary btn-lg">Learn More</a>
-            </div>
+          <div class="a-hero-content">
+
+            <h1>Convert your images to any format</h1>
+            <p>Your images are safe with us. We don't store your images, and we don't share them with anyone.</p>
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="card shadow-lg border-0">
-            <div class="card-header bg-primary text-white text-center">
-              <h3 class="mb-0">Quick Image Converter</h3>
-            </div>
-            <div class="card-body p-4">
-              <form id="homeConvertForm" enctype="multipart/form-data">
-                <div class="mb-3">
-                  <label for="homeConvertFile" class="form-label">Select Image</label>
-                  <input type="file" class="form-control" id="homeConvertFile" name="file" accept="image/*" required>
+                      <div class="a-hero-thumb2" style="left: 0; margin-left: 0; position: relative;">
+              <div class="modern-converter-card" style="background: rgba(51, 0, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 20px; padding: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; overflow: hidden; max-width: 100%;">
+              <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #0000ff;"></div>
+            
+
+              <form id="heroConvertForm" enctype="multipart/form-data">
+                <!-- Drag & Drop Zone -->
+                <div id="dragDropZone" style="border: 2px dashed rgba(0, 0, 0, 0.4); border-radius: 15px; padding: 30px; text-align: center; margin-bottom: 20px; transition: all 0.3s ease; cursor: pointer; background: rgba(0, 0, 255, 0.05);">
+                  <div id="dragDropContent">
+                    <i class="fas fa-cloud-upload-alt" style="font-size: 40px; color: rgba(0, 0, 255, 0.7); margin-bottom: 15px;"></i>
+                    <p style="margin: 0 0 10px; font-weight: 500;">Drag & drop your image here</p>
+                    <p style="margin: 0; font-size: 12px;">or click to browse files</p>
+                  </div>
+                  <div id="filePreview" style="display: none;">
+                    <img id="previewImage" style="max-width: 100%; max-height: 150px; border-radius: 10px; margin-bottom: 10px;">
+                    <p id="fileName" style="color: rgba(0, 0, 255, 0.9); margin: 0; font-size: 14px;"></p>
+                  </div>
+                  <input type="file" id="heroConvertFile" name="file" accept="image/*" required style="display: none;">
                 </div>
-                <div class="mb-3">
-                  <label for="homeConvertFormat" class="form-label">Convert To</label>
-                  <select class="form-select" id="homeConvertFormat" name="format" required>
-                    <option value="jpg">JPG</option>
-                    <option value="png">PNG</option>
-                    <option value="gif">GIF</option>
-                    <option value="webp">WEBP</option>
-                    <option value="bmp">BMP</option>
-                    <option value="tiff">TIFF</option>
+
+                <!-- Format Selection -->
+                <div style="margin-bottom: 20px;">
+                  <label style="font-weight: 500; margin-bottom: 8px; display: block;">Convert To</label>
+                  <select id="heroConvertFormat" name="format" required style="width: 100%; padding: 12px 15px; border: none; border-radius: 10px; background: rgba(0, 0, 255, 0.4); color: white; font-size: 14px; backdrop-filter: blur(10px);">
+                    <option value="jpg" style="background: #0000ff; color: white;">JPG</option>
+                    <option value="png" style="background: #0000ff; color: white;">PNG</option>
+                    <option value="gif" style="background: #0000ff; color: white;">GIF</option>
+                    <option value="webp" style="background: #0000ff; color: white;">WEBP</option>
+                    <option value="bmp" style="background: #0000ff; color: white;">BMP</option>
+                    <option value="tiff" style="background: #0000ff; color: white;">TIFF</option>
                   </select>
                 </div>
-                <div class="d-grid">
-                  <button type="submit" class="btn btn-primary btn-lg" id="homeConvertBtn">
-                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-                    Convert Image
-                  </button>
-                </div>
+
+                <!-- Convert Button -->
+                <button type="submit" id="heroConvertBtn" style="width: 100%; padding: 15px; border: 2px solid #000; border-radius: 12px; background: #ABFB4F; color: #0000ff; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                  <span id="convertBtnText">Convert Image</span>
+                  <span id="convertSpinner" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Converting...
+                  </span>
+                </button>
               </form>
-              <div id="homeConvertResult" class="mt-4 d-none">
-                <h6>Converted Image</h6>
-                <img id="homeConvertedPreview" class="img-fluid rounded mb-2" alt="Converted Preview" style="max-height: 200px;">
-                <div>
-                  <a id="homeConvertedDownload" class="btn btn-success btn-sm" download>Download Converted Image</a>
-                </div>
+
+              <!-- Result Section -->
+              <div id="heroConvertResult" style="display: none; margin-top: 20px; padding: 20px; background: rgba(0, 0, 255, 0.1); border-radius: 15px; backdrop-filter: blur(10px);">
+                <h6 style="color: #0000ff; margin-bottom: 15px; font-weight: 600;">Converted Image</h6>
+                <img id="heroConvertedPreview" style="width: 100%; max-height: 200px; border-radius: 10px; margin-bottom: 15px; object-fit: cover;">
+                <a id="heroConvertedDownload" download style="display: inline-block; padding: 10px 20px; background: #ABFB4F; color: #0000ff; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease;">
+                  <i class="fas fa-download" style="margin-right: 8px;"></i>Download
+                </a>
               </div>
-              <div id="homeConvertError" class="alert alert-danger mt-3 d-none" role="alert">
-                <span id="homeConvertErrorMessage"></span>
+
+              <!-- Error Section -->
+              <div id="heroConvertError" style="display: none; margin-top: 20px; padding: 15px; background: rgba(0, 0, 255, 0.1); border-radius: 10px; border-left: 4px solid #ABFB4F;">
+                <span id="heroConvertErrorMessage" style="color: #0000ff; font-size: 14px;"></span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <!-- End section -->
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white text-center py-3 mt-5">
-      <div class="container">
-        <small>&copy; 2025 Image Tools. All rights reserved.</small>
+  <div class="a-brand-logo-section">
+    <div class="container">
+      <div class="a-brand-logo-wrap">
+        <p>Supported Image Formats</p>
+        <div class="a-brand-slider3">
+          <div class="a-brand-item">
+            <img src="assets/images/png.png" alt="" width="60">
+          </div>
+          <div class="a-brand-item">
+            <img src="assets/images/jpeg.png" alt="" width="60">
+          </div>
+          <div class="a-brand-item">
+            <img src="assets/images/bmp.png" alt="" width="60">
+          </div>
+          <div class="a-brand-item">
+            <img src="assets/images/gif.png" alt="" width="60">
+          </div>
+          <div class="a-brand-item">
+            <img src="assets/images/tiff.png" alt="" width="60">
+          </div>
+          <div class="a-brand-item">
+            <img src="assets/images/webp.png" alt="" width="60">
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+  </div>
+  <!-- End section -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-    <script>
-      // Home page converter form functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const homeConvertForm = document.getElementById('homeConvertForm');
-        const homeConvertBtn = document.getElementById('homeConvertBtn');
-        const homeConvertResult = document.getElementById('homeConvertResult');
-        const homeConvertedPreview = document.getElementById('homeConvertedPreview');
-        const homeConvertedDownload = document.getElementById('homeConvertedDownload');
-        const homeConvertError = document.getElementById('homeConvertError');
-        const homeConvertErrorMessage = document.getElementById('homeConvertErrorMessage');
+  <div class="section a-section-padding3">
+    <div class="container">
+      <div class="a-section-title center">
+        <h2>Our Other Apps to Help with Image Tasks</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="a-iconbox-wrap2">
+            <div class="a-iconbox-icon">
+              <img src="assets/images/v2/icon-v2-3.png" alt="">
+            </div>
+            <div class="a-iconbox-data">
+              <h3>Image Resizer</h3>
+              <p>Resize your images to any size you want. You can resize your images to any size you want.</p>
+            </div>
+            <div class="a-iconbox-thumb">
+              <img src="assets/images/image-resizer.png" alt="">
+            </div>
+          </div>
+          <div class="a-iconbox-wrap2">
+            <div class="a-iconbox-icon">
+              <img src="assets/images/v2/icon-v2-2.png" alt="">
+            </div>
+            <div class="a-iconbox-data">
+              <h3>Lossless Image Compressor:</h3>
+              <p>You can compress your images to any size you want. That too without losing any quality.</p>
+            </div>
+            <div class="a-iconbox-thumb">
+              <img src="assets/images/compress.png" alt="">
+            </div>
+          </div>
+        </div>
+		
+        <div class="col-lg-6">
+          <div class="a-iconbox-wrap2">
+            <div class="a-iconbox-icon">
+              <img src="assets/images/v2/icon-v2-2.png" alt="">
+            </div>
+            <div class="a-iconbox-data">
+              <h3>Image Watermarking Tool:</h3>
+              <p>You can add a watermark to your images. You can add a watermark to your images.</p>
+            </div>
+            <div class="a-iconbox-thumb">
+              <img src="assets/images/watermark.png" alt="">
+            </div>
+          </div>
+          <div class="a-iconbox-wrap2">
+            <div class="a-iconbox-icon">
+              <img src="assets/images/v2/icon-v2-4.png" alt="">
+            </div>
+            <div class="a-iconbox-data">
+              <h3>Background Remover</h3>
+              <p>You can remove the background from your images. You can remove the background from your images.</p>
+            </div>
+            <div class="a-iconbox-thumb">
+              <img src="assets/images/bg-remove.png" alt="">
+            </div>
+          </div>
+        </div>
+		
+      </div>
+    </div>
+  </div>
+  <!-- End Section -->
 
-        homeConvertForm.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          const formData = new FormData();
-          const fileInput = document.getElementById('homeConvertFile');
-          const formatSelect = document.getElementById('homeConvertFormat');
-          
-          if (!fileInput.files[0]) {
-            showHomeError('Please select an image file.');
-            return;
-          }
-          
-          formData.append('file', fileInput.files[0]);
-          formData.append('format', formatSelect.value);
-          
-          // Show loading state
-          setHomeButtonLoading(homeConvertBtn, 'processing');
-          hideHomeError();
-          hideHomeResult();
-          
-          try {
-            const response = await fetch('https://image-resizer-backend-ehcz.onrender.com/convert-image/', {
-              method: 'POST',
-              body: formData
-            });
-            
-            if (!response.ok) {
-              let errorText = `HTTP error! status: ${response.status}`;
-              try {
-                const errorData = await response.text();
-                if (errorData) {
-                  errorText = `Server error: ${errorData}`;
-                }
-              } catch (e) {
-                errorText = `Server error (${response.status}): ${response.statusText}`;
-              }
-              throw new Error(errorText);
-            }
-            
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            
-            // Display result
-            homeConvertedPreview.src = url;
-            homeConvertedDownload.href = url;
-            homeConvertedDownload.download = `converted_${fileInput.files[0].name.split('.')[0]}.${formatSelect.value}`;
-            
-            showHomeResult();
-            
-          } catch (error) {
-            console.error('Error:', error);
-            let errorMessage = 'Failed to convert image. Please try again.';
-            if (error.message) {
-              errorMessage = `Error: ${error.message}`;
-            }
-            if (error.name === 'TypeError' && error.message.includes('fetch')) {
-              errorMessage = 'Cannot connect to server. Please check your internet connection and try again.';
-            }
-            showHomeError(errorMessage);
-          } finally {
-            setHomeButtonLoading(homeConvertBtn, 'reset');
-          }
-        });
+  <div class="a-testimonial-slider-section a-section-padding2" style="background-image: url(assets/images/v2/t-bg.png)">
+    <div class="container">
+      <div class="a-testimonial-slider">
+        <div class="a-testimonial-slider-item">
+          <div class="a-testimonial-slider-data">
+            <div class="a-testimonial-slider-rating">
+              <ul>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+              </ul>
+            </div>
+            <h3> "Fast, flawless, and always ready when we need it"</h3>
+            <p>IMG Convert Online has made our image conversion process fast, simple, and reliable. We save hours every week, get perfect quality, and can meet all client format needs instantly. A must-have tool for any creative business.</p>
+          </div>
+          <div class="a-testimonial-slider-author">
+            <div class="a-testimonial-slider-author-thumb">
+              <img src="assets/images/rahul.png" alt="">
+            </div>
+            <div class="a-testimonial-slider-author-data">
+              <span>Rahul Mehta</span>
+              <p>Marketing Head – PixelVista Studios Pvt. Ltd.</p>
+            </div>
+          </div>
+        </div>
+        <div class="a-testimonial-slider-item">
+          <div class="a-testimonial-slider-data">
+            <div class="a-testimonial-slider-rating">
+              <ul>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+              </ul>
+            </div>
+            <h3> "A Game Changer for Our Business"</h3>
+            <p>We've been using this CRM platform for over a year now, and I can't stress enough how transformative it has been for our business. The impact this has had on our customer relations, sales and overall efficiency is tremendous.</p>
+          </div>
+          <div class="a-testimonial-slider-author">
+            <div class="a-testimonial-slider-author-thumb">
+              <img src="assets/images/v2/t-user.png" alt="">
+            </div>
+            <div class="a-testimonial-slider-author-data">
+              <span>Jonas Aly</span>
+              <p>Founder @ Company</p>
+            </div>
+          </div>
+        </div>
+        <div class="a-testimonial-slider-item">
+          <div class="a-testimonial-slider-data">
+            <div class="a-testimonial-slider-rating">
+              <ul>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+                <li><img src="assets/images/v2/rating2.png" alt=""></li>
+              </ul>
+            </div>
+            <h3> "A Game Changer for Our Business"</h3>
+            <p>We've been using this CRM platform for over a year now, and I can't stress enough how transformative it has been for our business. The impact this has had on our customer relations, sales and overall efficiency is tremendous.</p>
+          </div>
+          <div class="a-testimonial-slider-author">
+            <div class="a-testimonial-slider-author-thumb">
+              <img src="assets/images/v2/t-user.png" alt="">
+            </div>
+            <div class="a-testimonial-slider-author-data">
+              <span>Jonas Aly</span>
+              <p>Founder @ Company</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  <div class="section a-section-padding2">
+    <div id="a-counter"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="a-v2-thumb thumb-mr">
+            <img src="assets/images/img-convert.png" alt="">
+            <div class="a-v2-thumb-shape">
+              <img src="assets/images/v2/shape3-v2.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="a-default-content">
+            <h2>Your All-in-One Image Conversion Solution</h2>
+            <p>Convert, resize, and compress images instantly — without losing quality. Perfect for professionals, creatives, and everyday users.</p>
+            <div class="a-extara-mt">
+              <div class="a-counter-wrap">
+                <div class="a-counter-data">
+                  <h2 class="a-counter-number"><span data-percentage="98" class="a-counter"></span>%</h2>
+                  <p>Faster Processing Speed</p>
+                </div>
+                <div class="a-counter-data">
+                  <h2 class="a-counter-number"><span data-percentage="10" class="a-counter"></span>M</h2>
+                  <p>Images Converted Successfully</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End section -->
+  <div class="section a-section-padding5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 order-lg-2">
+          <div class="a-v2-thumb thumb-ml">
+            <img src="assets/images/img-process.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="a-default-content">
+            <h2>Lightning-Fast Image Processing</h2>
+            <p>Experience seamless image conversion and editing with our optimized processing engine, built for speed and precision.</p>
+            <div class="a-extara-mt">
+              <div class="a-iconbox-wrap-left">
+                <div class="a-iconbox-icon none-bg">
+                  <img src="assets/images/v2/check.png" alt="">
+                </div>
+                <div class="a-iconbox-data">
+                  <span>Instant Results</span>
+                  <p>Convert and edit images in just a few seconds.</p>
+                </div>
+              </div>
+              <div class="a-iconbox-wrap-left">
+                <div class="a-iconbox-icon none-bg">
+                  <img src="assets/images/v2/check.png" alt="">
+                </div>
+                <div class="a-iconbox-data">
+                  <span>Multi-Format Support</span>
+                  <p>Handle JPG, PNG, WEBP, and more effortlessly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  
+  <div class="a-cta-section2">
+    <div class="container">
+      <div class="a-cta-wrap" style="background-image: url(assets/images/v2/cta-bg.png)">
+        <div class="a-cta-content">
+          <h2>Start Converting Your Image Now!</h2>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="a-footer-section">
+    <div class="container">
+      <div class="a-footer-top">
+        <div class="row">
+          <div class="col-xl-4 col-lg-12">
+            <div class="a-footer-textarea">
+              <a href="">
+                <img src="assets/images/logo/img-convert-online-logo.png" alt="" width="300">
+              </a>
+              <p>We're your innovation partner, delivering cutting-edge solutions that elevate your business to the next level.</p>
+              <div class="a-social-icon social-box">
+                <ul>
+                  <li>
+                    <a href="https://twitter.com/" target="_blank">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://facebook.com/" target="_blank">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/" target="_blank">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/" target="_blank">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-4">
+            <div class="a-footer-menu extar-margin">
+              <div class="a-footer-title">
+                <p>Navigation</p>
+              </div>
+              <ul>
+                <li><a href="">Demos</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Pages</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4">
+            <div class="a-footer-menu">
+              <div class="a-footer-title">
+                <p>Utility pages</p>
+              </div>
+              <ul>
+                <li><a href="">Instructions</a></li>
+                <li><a href="">Style guide</a></li>
+                <li><a href="">Licenses</a></li>
+                <li><a href="">404 Not found</a></li>
+                <li><a href="">Password protected</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-4">
+            <div class="a-footer-menu extar-margin">
+              <div class="a-footer-title">
+                <p>Resources</p>
+              </div>
+              <ul>
+                <li><a href="">Support</a></li>
+                <li><a href="">Privacy policy</a></li>
+                <li><a href="">Terms & Conditions</a></li>
+                <li><a href="">Strategic finance</a></li>
+                <li><a href="">Video guide</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="a-footer-bottom center">
+        <div class="a-copywright">
+          <p> &copy;Copyright 2024, All Rights Reserved by Mthemeus</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- scripts -->
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/menu/menu.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/countdown.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/faq.js"></script>
+
+  <script src="assets/js/app.js"></script>
+
+  <!-- Image Converter Form JavaScript -->
+  <script>
+    // Hero page converter form functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroConvertForm = document.getElementById('heroConvertForm');
+      const heroConvertBtn = document.getElementById('heroConvertBtn');
+      const heroConvertResult = document.getElementById('heroConvertResult');
+      const heroConvertedPreview = document.getElementById('heroConvertedPreview');
+      const heroConvertedDownload = document.getElementById('heroConvertedDownload');
+      const heroConvertError = document.getElementById('heroConvertError');
+      const heroConvertErrorMessage = document.getElementById('heroConvertErrorMessage');
+      const dragDropZone = document.getElementById('dragDropZone');
+      const dragDropContent = document.getElementById('dragDropContent');
+      const filePreview = document.getElementById('filePreview');
+      const previewImage = document.getElementById('previewImage');
+      const fileName = document.getElementById('fileName');
+      const fileInput = document.getElementById('heroConvertFile');
+      const convertBtnText = document.getElementById('convertBtnText');
+      const convertSpinner = document.getElementById('convertSpinner');
+
+      // Drag and Drop functionality
+      dragDropZone.addEventListener('click', () => fileInput.click());
+
+      dragDropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dragDropZone.style.borderColor = 'rgba(255,255,255,0.8)';
+        dragDropZone.style.background = 'rgba(255,255,255,0.1)';
+      });
+
+      dragDropZone.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        dragDropZone.style.borderColor = 'rgba(255,255,255,0.4)';
+        dragDropZone.style.background = 'rgba(255,255,255,0.05)';
+      });
+
+      dragDropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dragDropZone.style.borderColor = 'rgba(255,255,255,0.4)';
+        dragDropZone.style.background = 'rgba(255,255,255,0.05)';
         
-        function setHomeButtonLoading(button, state) {
-          const spinner = button.querySelector('.spinner-border');
-          if (state === 'processing') {
-            button.disabled = true;
-            spinner.classList.remove('d-none');
-            button.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Converting...';
-          } else { // 'reset'
-            button.disabled = false;
-            spinner.classList.add('d-none');
-            button.innerHTML = 'Convert Image';
-          }
-        }
-        
-        function showHomeResult() {
-          homeConvertResult.classList.remove('d-none');
-          homeConvertError.classList.add('d-none');
-        }
-        
-        function hideHomeResult() {
-          homeConvertResult.classList.add('d-none');
-        }
-        
-        function showHomeError(message) {
-          homeConvertErrorMessage.textContent = message;
-          homeConvertError.classList.remove('d-none');
-          homeConvertResult.classList.add('d-none');
-        }
-        
-        function hideHomeError() {
-          homeConvertError.classList.add('d-none');
+        const files = e.dataTransfer.files;
+        if (files.length > 0 && files[0].type.startsWith('image/')) {
+          handleFileSelect(files[0]);
         }
       });
-    </script>
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          handleFileSelect(e.target.files[0]);
+        }
+      });
+
+      function handleFileSelect(file) {
+        if (!file.type.startsWith('image/')) {
+          showHeroError('Please select a valid image file.');
+          return;
+        }
+
+        // Show file preview
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          previewImage.src = e.target.result;
+          fileName.textContent = file.name;
+          dragDropContent.style.display = 'none';
+          filePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+
+        // Update file input
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        fileInput.files = dataTransfer.files;
+      }
+
+      heroConvertForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData();
+        const formatSelect = document.getElementById('heroConvertFormat');
+        
+        if (!fileInput.files[0]) {
+          showHeroError('Please select an image file.');
+          return;
+        }
+        
+        formData.append('file', fileInput.files[0]);
+        formData.append('format', formatSelect.value);
+        
+        // Show loading state
+        setHeroButtonLoading('processing');
+        hideHeroError();
+        hideHeroResult();
+        
+        try {
+          const response = await fetch('https://image-resizer-backend-ehcz.onrender.com/convert-image/', {
+            method: 'POST',
+            body: formData
+          });
+          
+          if (!response.ok) {
+            let errorText = `HTTP error! status: ${response.status}`;
+            try {
+              const errorData = await response.text();
+              if (errorData) {
+                errorText = `Server error: ${errorData}`;
+              }
+            } catch (e) {
+              errorText = `Server error (${response.status}): ${response.statusText}`;
+            }
+            throw new Error(errorText);
+          }
+          
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          
+          // Display result
+          heroConvertedPreview.src = url;
+          heroConvertedDownload.href = url;
+          heroConvertedDownload.download = `converted_${fileInput.files[0].name.split('.')[0]}.${formatSelect.value}`;
+          
+          showHeroResult();
+          
+        } catch (error) {
+          console.error('Error:', error);
+          let errorMessage = 'Failed to convert image. Please try again.';
+          if (error.message) {
+            errorMessage = `Error: ${error.message}`;
+          }
+          if (error.name === 'TypeError' && error.message.includes('fetch')) {
+            errorMessage = 'Cannot connect to server. Please check your internet connection and try again.';
+          }
+          showHeroError(errorMessage);
+        } finally {
+          setHeroButtonLoading('reset');
+        }
+      });
+      
+      function setHeroButtonLoading(state) {
+        if (state === 'processing') {
+          heroConvertBtn.disabled = true;
+          convertBtnText.style.display = 'none';
+          convertSpinner.style.display = 'inline';
+          heroConvertBtn.style.opacity = '0.7';
+        } else { // 'reset'
+          heroConvertBtn.disabled = false;
+          convertBtnText.style.display = 'inline';
+          convertSpinner.style.display = 'none';
+          heroConvertBtn.style.opacity = '1';
+        }
+      }
+      
+      function showHeroResult() {
+        heroConvertResult.style.display = 'block';
+        heroConvertError.style.display = 'none';
+      }
+      
+      function hideHeroResult() {
+        heroConvertResult.style.display = 'none';
+      }
+      
+      function showHeroError(message) {
+        heroConvertErrorMessage.textContent = message;
+        heroConvertError.style.display = 'block';
+        heroConvertResult.style.display = 'none';
+      }
+      
+      function hideHeroError() {
+        heroConvertError.style.display = 'none';
+      }
+    });
+  </script>
+
 </body>
-</html> 
+</html>

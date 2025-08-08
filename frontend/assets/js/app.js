@@ -5,18 +5,18 @@
 
   /*------------------------------------------------------------------
   [Table of contents]
-  ZUBUZ PRELOADER JS INIT
-  ZUBUZ STICKY MENU JS INIT
-  ZUBUZ COUNTER JS INIT
-  ZUBUZ BRAND SLIDER ONE
-  ZUBUZ BRAND SLIDER TWO
-  ZUBUZ BRAND SLIDER THREE
-  ZUBUZ TESTIMONIAL SLIDER
-  ZUBUZ MAGNIFIC POPUP JS INIT
-  ZUBUZ PRICING TABLE JS INIT
-  ZUBUZ WOW JS INIT
-  ZUBUZ PORTFOLIO TWO COLUMN JS 
-  ZUBUZ PORTFOLIO ONE COLUMN JS 
+  a PRELOADER JS INIT
+  a STICKY MENU JS INIT
+  a COUNTER JS INIT
+  a BRAND SLIDER ONE
+  a BRAND SLIDER TWO
+  a BRAND SLIDER THREE
+  a TESTIMONIAL SLIDER
+  a MAGNIFIC POPUP JS INIT
+  a PRICING TABLE JS INIT
+  a WOW JS INIT
+  a PORTFOLIO TWO COLUMN JS 
+  a PORTFOLIO ONE COLUMN JS 
   
   -------------------------------------------------------------------*/
 
@@ -29,13 +29,13 @@
   };
   $(function () {
     /*--------------------------------------------------------------
-    ZUBUZ PRELOADER JS INIT
+    a PRELOADER JS INIT
     --------------------------------------------------------------*/
 
-    $(".zubuz-preloader-wrap").fadeOut(500);
+    $(".a-preloader-wrap").fadeOut(500);
 
     /*--------------------------------------------------------------
-    ZUBUZ STICKY MENU JS INIT
+    a STICKY MENU JS INIT
     --------------------------------------------------------------*/
     $(window).on('scroll', function () {
       if ($(window).scrollTop() > 50) {
@@ -46,15 +46,15 @@
     });
 
     /*--------------------------------------------------------------
-    ZUBUZ COUNTER JS INIT
+    a COUNTER JS INIT
     --------------------------------------------------------------*/
-    var zubuz_counter = $('#zubuz-counter');
-    if (zubuz_counter.is_exist()) {
+    var a_counter = $('#a-counter');
+    if (a_counter.is_exist()) {
       var a = 0;
       $(window).scroll(function () {
-        var oTop = $(zubuz_counter).offset().top - window.innerHeight;
+        var oTop = $(a_counter).offset().top - window.innerHeight;
         if (a == 0 && $(window).scrollTop() > oTop) {
-          $('.zubuz-counter').each(function () {
+          $('.a-counter').each(function () {
             var $this = $(this),
               countTo = $this.attr('data-percentage');
             $({
@@ -78,11 +78,11 @@
     }
 
     /*--------------------------------------------------------------
-    ZUBUZ BRAND SLIDER ONE
+    a BRAND SLIDER ONE
     --------------------------------------------------------------*/
-    var zubuz_brand_slider = $('.zubuz-brand-slider');
-    if (zubuz_brand_slider.is_exist()) {
-      zubuz_brand_slider.slick({
+    var a_brand_slider = $('.a-brand-slider');
+    if (a_brand_slider.is_exist()) {
+      a_brand_slider.slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -109,11 +109,11 @@
     }
 
     /*--------------------------------------------------------------
-    ZUBUZ BRAND SLIDER TWO
+    a BRAND SLIDER TWO
     --------------------------------------------------------------*/
-    var zubuz_brand_slider = $('.zubuz-brand-slider2');
-    if (zubuz_brand_slider.is_exist()) {
-      zubuz_brand_slider.slick({
+    var a_brand_slider = $('.a-brand-slider2');
+    if (a_brand_slider.is_exist()) {
+      a_brand_slider.slick({
         rtl: true,
         infinite: true,
         slidesToShow: 3,
@@ -141,11 +141,11 @@
     }
 
     /*--------------------------------------------------------------
-    ZUBUZ BRAND SLIDER THREE
+    a BRAND SLIDER THREE
     --------------------------------------------------------------*/
-    var zubuz_brand_slider3 = $('.zubuz-brand-slider3');
-    if (zubuz_brand_slider3.is_exist()) {
-      zubuz_brand_slider3.slick({
+    var a_brand_slider3 = $('.a-brand-slider3');
+    if (a_brand_slider3.is_exist()) {
+      a_brand_slider3.slick({
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
@@ -172,11 +172,11 @@
     }
 
     /*--------------------------------------------------------------
-    ZUBUZ TESTIMONIAL SLIDER
+    a TESTIMONIAL SLIDER
     --------------------------------------------------------------*/
-    var zubuz_t_slider = $('.zubuz-testimonial-slider');
-    if (zubuz_t_slider.is_exist()) {
-      zubuz_t_slider.slick({
+    var a_t_slider = $('.a-testimonial-slider');
+    if (a_t_slider.is_exist()) {
+      a_t_slider.slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -187,7 +187,7 @@
     }
 
     /*--------------------------------------------------------------
-    ZUBUZ MAGNIFIC POPUP JS INIT
+    a MAGNIFIC POPUP JS INIT
     ------------------------------------------------------------*/
     var popup_youtube = $('.video-init');
     if (popup_youtube.is_exist()) {
@@ -198,7 +198,7 @@
     }
 
     /*--------------------------------------------------------------
-    ZUBUZ PRICING TABLE JS INIT
+    a PRICING TABLE JS INIT
     ------------------------------------------------------------*/
     // Table BTN Trigger
     $("#l5-pricing-btn .toggle-btn").on("click", function (e) {
@@ -225,7 +225,7 @@
   $(window).on("resize", function () {}); // end window resize
 
   /*--------------------------------------------------------------
-  ZUBUZ WOW JS INIT
+  a WOW JS INIT
   ------------------------------------------------------------*/
 
   $(window).on("load", function () {
@@ -237,11 +237,11 @@
     wow.init();
 
     /*--------------------------------------------------------------
-    ZUBUZ PORTFOLIO TWO COLUMN JS 
+    a PORTFOLIO TWO COLUMN JS 
     ------------------------------------------------------------*/
-    var zubuz_portfolio_two_column = $('#zubuz-two-column');
-    if (zubuz_portfolio_two_column.is_exist()) {
-      var $container = $(zubuz_portfolio_two_column),
+    var a_portfolio_two_column = $('#a-two-column');
+    if (a_portfolio_two_column.is_exist()) {
+      var $container = $(a_portfolio_two_column),
         colWidth = function colWidth() {
           var w = $container.width(),
             columnNum = 1,
@@ -284,7 +284,7 @@
         };
       isotope();
       $(window).resize(isotope);
-      var $optionSets = $('.zubuz-portfolio-menu .option-set'),
+      var $optionSets = $('.a-portfolio-menu .option-set'),
         $optionLinks = $optionSets.find('li');
       $optionLinks.click(function () {
         var $this = $(this);
@@ -311,11 +311,11 @@
     }
 
     /*--------------------------------------------------------------
-    ZUBUZ PORTFOLIO ONE COLUMN JS 
+    a PORTFOLIO ONE COLUMN JS 
     ------------------------------------------------------------*/
-    var zubuz_portfolio_one_column = $('#zubuz-one-column');
-    if (zubuz_portfolio_one_column.is_exist()) {
-      var $container = $(zubuz_portfolio_one_column),
+    var a_portfolio_one_column = $('#a-one-column');
+    if (a_portfolio_one_column.is_exist()) {
+      var $container = $(a_portfolio_one_column),
         colWidth = function colWidth() {
           var w = $container.width(),
             columnNum = 1,
@@ -358,7 +358,7 @@
         };
       isotope();
       $(window).resize(isotope);
-      var $optionSets = $('.zubuz-portfolio-menu .option-set'),
+      var $optionSets = $('.a-portfolio-menu .option-set'),
         $optionLinks = $optionSets.find('li');
       $optionLinks.click(function () {
         var $this = $(this);

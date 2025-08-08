@@ -2,7 +2,7 @@ var Accordion = function(el, multiple) {
   this.el = el || {};
   this.multiple = multiple || false;
 
-  var links = this.el.find('.zubuz-accordion-header');
+  var links = this.el.find('.a-accordion-header');
   links.on('click', {
       el: this.el,
       multiple: this.multiple
@@ -18,7 +18,7 @@ Accordion.prototype.dropdown = function(e) {
   $this.parent().toggleClass('open');
 
   if (!e.data.multiple) {
-      $el.find('.zubuz-accordion-body').not($next).slideUp().parent().removeClass('open');
+      $el.find('.a-accordion-body').not($next).slideUp().parent().removeClass('open');
   };
 }
-var accordion = new Accordion($('.zubuz-accordion-wrap'), false);
+var accordion = new Accordion($('.a-accordion-wrap'), false);
